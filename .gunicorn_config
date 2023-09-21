@@ -1,0 +1,1 @@
+DJANGO_SETTINGS_MODULE="ocean_annotations.settings.prod"

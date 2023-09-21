@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    {% block extraheads %}{% endblock extraheads %}
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" integrity="sha512-KlU17Q8b+noPYQtMWXM8BO08lReJoX3AHxYm7Zyi3UpYYkE4ch7r8d82DGitdIE3r82OW20VMQLVwsYyXo99sQ==" crossorigin="anonymous">
+    </script>
+    
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body class="text-center">
+{% block content %}{% endblock content %}
+</body>
+
+{% block extrascripts %}{% endblock extrascripts %}
+</html>

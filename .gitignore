@@ -1,0 +1,29 @@
+*.idea/
+*.DS_Store
+
+# Python
+*__pycache__*
+*.ipynb_checkpoints
+*.npy
+*.pyc
+
+# vim
+*.swp
+*.swo
+
+# Audio files
+*.wav
+*.WAV
+*.flac
+*.FLAC
+
+# Django project
+external_annotations/settings/local_dev.py
+db.sqlite3
+media/audios/*
+static
+backups
+logs
+.vscode
+manage.py
+data.pkl

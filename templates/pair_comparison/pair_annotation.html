@@ -1,0 +1,329 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load forms_tags %}
+{% block extratitle %}Instrucciones{% endblock extratitle %}
+{% block content %}
+
+<style>
+    .container {
+        width: 50%;
+        overflow: auto; /* Esto evita que el contenido se desborde */
+    }
+    
+    .left-div {
+        float: left; /* Hace que el primer div flote a la izquierda */
+        width: 50%; /* Establece el ancho del primer div */
+    }
+    
+    .right-div {
+        float: right; /* Hace que el segundo div flote a la izquierda */
+        width: 50%; /* Establece el ancho del segundo div */
+    }
+
+    .dim-left-div {
+        
+        border: 1 px solid black;
+        height: 50px;
+        /*float: left; /*Hace que el primer div flote a la izquierda */
+        /*width: 100%; /* Establece el ancho del primer div */
+    }
+    
+    .dim-right-div {
+        position: relative;
+        /*float: right;  /*Hace que el segundo div flote a la izquierda */
+        width: 100%; /* Establece el ancho del segundo div */
+        height: 60px;
+    }
+
+    .instructions-txt{
+        margin: 50px;
+        margin-left: 150px;
+        margin-right: 150px;
+        font-size: 40px;
+    }
+
+    .dim-container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 65%;
+        overflow: auto; /* Esto evita que el contenido se desborde */
+    }
+
+    .dim-text{
+        float: left;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+
+    .text-letters{
+        font-size: 40px;
+    }
+
+    .form-check-inline label{
+    margin: 0px 50px 0px 40px;
+    }
+    
+  </style>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <h2 class="nav-title">Anotación de personalidad         </h2>
+
+    <ul class="navbar-nav ml-auto">
+        <button id="count" class="btn btn-info" type="button">{{ order }} / {{ total }}</button>
+        <button id="logout" class="btn btn-danger btn-md" type="button" 
+                onclick=location.href="{% url 'logout' %}">Cerrar Sesión
+        </button>
+    </ul>
+</nav>
+<br> 
+
+<div class="container">
+    <div class="left-container">
+        <div id="player" class="left-div">
+            <div class="text-letters">
+                <p>A</p>
+            </div>
+            <audio id="bgAudio" controls controlslist="nodownload" preload="auto">
+                <source src="{{ audio_A }}" type="audio/wav">
+                Este browser no es capaz de reproducir el audio de prueba
+            </audio>
+            <script>
+                var audio = document.getElementById("bgAudio");
+                audio.volume = 1.0;
+            </script>
+        </div>
+    </div>
+
+    <div class="right-container">
+        <div id="player" class="right-div">
+            <div class="text-letters">
+                <p>B</p>
+            </div>
+            <audio id="bgAudio" controls controlslist="nodownload" preload="auto">
+                <source src="{{ audio_B }}" type="audio/wav">
+                Este browser no es capaz de reproducir el audio de prueba
+            </audio>
+            <script>
+                var audio = document.getElementById("bgAudio");
+                audio.volume = 1.0;
+            </script>
+        </div>
+    </div>
+</div>
+<!--    
+<div class="display-4 instructions-txt">
+    <p>Por favor, decinos quién de los dos te parece que rankea más alto en cada característica de personalidad</p>
+</div>
+-->
+
+<form method="post">
+    {% csrf_token %}
+
+    <!-- ###########################################################################################################-->
+    <div class="dim-container">
+        <div class="dim-left-div">
+            <div class="help-tip" data-toggle="modal" style="float: left" data-target="#dim_O_modal"></div>
+            <div class="dim-text">
+                <p>¿Quién te parece que tiene mayor <b>apertura a la experiencia</b>?</p>
+            </div>
+        </div>
+        <div class="modal fade" id="dim_O_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Apertura a la experiencia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        <p>
+                            Este factor se refiere a la disposición de una persona para experimentar nuevas ideas, 
+                            emociones y actividades. Las personas con alta apertura a la experiencia suelen ser curiosas, imaginativas y abiertas al cambio.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!--
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido!</button>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dim-right-div">
+            <div class="form-check">
+                {{ form.dim_O }}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ###########################################################################################################-->
+    <div class="dim-container">
+        <div class="dim-left-div">
+            <div class="help-tip" data-toggle="modal" style="float: left" data-target="#dim_C_modal"></div>
+            <div class="dim-text">
+                <p>¿Quién te parece más <b>responsable</b>?</p>
+            </div>
+            </div>
+        <div class="modal fade" id="dim_C_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Responsabilidad</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        <p>
+                            También conocido como "conciencia", este factor se relaciona con la organización, el autocontrol y la capacidad 
+                            de establecer metas y seguirlas de manera diligente. Las personas altas en responsabilidad suelen ser confiables, 
+                            ordenadas y comprometidas.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!--
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido!</button>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dim-right-div">
+            <div class="form-check">
+                {{ form.dim_C }}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ###########################################################################################################-->
+    <div class="dim-container">
+        <div class="dim-left-div">
+            <div class="help-tip" data-toggle="modal" style="float: left" data-target="#dim_E_modal"></div>
+            <div class="dim-text">
+                <p>¿Quién te parece más <b>extravertido</b>?</p>
+            </div>
+            </div>
+        <div class="modal fade" id="dim_E_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Extraversión</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        <p>
+                            Este factor se refiere al grado en que una persona busca la compañía de otros, disfruta de situaciones sociales y tiende 
+                            a ser enérgica y extrovertida. Las personas con alta extraversión suelen ser sociables, asertivas y llenas de energía.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!--
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido!</button>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dim-right-div">
+            <div class="form-check">
+                {{ form.dim_E }}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ###########################################################################################################-->
+    <div class="dim-container">
+        <div class="dim-left-div">
+            <div class="help-tip" data-toggle="modal" style="float: left" data-target="#dim_A_modal"></div>
+            <div class="dim-text">
+                <p>¿Quién te parece más <b>amable</b>?</p>
+            </div>
+            </div>
+        <div class="modal fade" id="dim_A_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Amabilidad</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        <p>
+                            También conocido como "afabilidad", este factor se refiere a la disposición de una persona para ser considerada, 
+                            compasiva y cooperativa con los demás. Las personas altas en amabilidad suelen ser cálidas, empáticas y amigables.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!--
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido!</button>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dim-right-div">
+            <div class="form-check">
+                {{ form.dim_A }}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ###########################################################################################################-->
+    <div class="dim-container">
+        <div class="dim-left-div">
+            <div class="help-tip" data-toggle="modal" style="float: left" data-target="#dim_N_modal"></div>
+            <div class="dim-text">
+                <p>¿Quién te parece que presenta un mayor nivel de <b>neuroticismo</b>?</p>
+            </div>   
+        </div>
+        <div class="modal fade" id="dim_N_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Neuroticismo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        <p>
+                            Este factor se relaciona con la estabilidad emocional y la tendencia a experimentar emociones negativas como la ansiedad, 
+                            la depresión y el estrés. Las personas con alto neuroticismo pueden ser propensas a la preocupación y la inestabilidad emocional.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!--
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido!</button>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dim-right-div">
+            <div class="form-check">
+                {{ form.dim_N }}
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <button id="next" class="btn btn-primary btn-lg" type="submit" style="margin-top: 10px">Siguiente
+    </button>
+</form>
+
+{% endblock content %}
