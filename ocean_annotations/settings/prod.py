@@ -25,7 +25,7 @@ DATABASES = {
 
 
 STATIC_URL = "/pair_comparison/static/"
-SITE_ROOT = '/home/mbmeza/pair_comparison/ocean_annotations/'
+SITE_ROOT = '/home/gbarchi/pair_comparison/ocean_annotations/'
 STATICFILES_DIRS = (
     os.path.join(SITE_ROOT, 'ocean_annotations/static/'),
 )
