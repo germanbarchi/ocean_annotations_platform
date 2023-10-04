@@ -1,0 +1,272 @@
+body {
+    padding: 5% 20%;
+    background-color: #DCE0E6;
+}
+
+#cal-text {
+    display: inline-block;
+    text-align: justify;
+    font-size: large;
+}
+
+#instructions {
+    text-align: justify;
+    font-size: large;
+}
+
+#instructions p + p {
+    text-indent: 1.5em;
+}
+
+#instructions h2 {
+    font-weight: bold;
+    padding-top: 1em;
+}
+
+
+#instructions h3 {
+    text-align: center;
+    padding-bottom: 0.7em;
+    padding-top: 1.5em;
+    font-weight: bold;
+}
+
+#instructions h4 {
+    font-weight: bold;
+}
+
+#logout {
+    margin-left:10px;
+}
+
+#instructions {
+    margin-left:10px;
+}
+
+.general {
+    display: inline-block;
+    padding-top: 1em;
+}
+.general h4 {
+    float: left; 
+    margin-right: 10px;
+}
+.comments {
+    float: left; 
+    margin-right: 10px;
+}
+
+#comments {
+    padding : 2em;
+}
+
+.nav-title{
+    color: white !important;
+}
+
+nav {
+    background-color: #1F1F20;
+}
+
+input[type=radio] {
+    display: block;
+    margin: 0 auto !important;
+}
+
+label {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: larger;
+}
+
+.form-check-inline{
+    margin-bottom: 0;
+    position: relative;
+    left: 0px !important;
+}
+.dims{
+    display: flex;
+    justify-content: left ;
+
+}
+
+.form-group {
+    margin : 0 !important;
+}
+
+.form-group div div{
+    height: 6em;
+    width: 6em;
+    text-align: center;
+    line-height: 1;
+}
+
+
+.help-tip {
+    text-align: center;
+    background-color: #567EBB;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+    float: right;
+    margin-left: 10px;
+}
+
+.help-tip:before {
+    content: '?';
+    font-weight: bold;
+    color: #fff;
+}
+
+.help-tip:hover p {
+    display: block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+    position:relative;
+    z-index: 100;
+
+}
+
+.help-tip p { /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #1F1F20;
+    padding: 20px;
+    width: 350px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.help-tip p:before { /* The pointer of the tooltip */
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #1E2021;
+}
+
+.help-tip p:after { /* Prevents the tooltip from being hidden */
+    width: 100%;
+    height: 40px;
+    content: '';
+}
+
+#player {
+    position:relative;
+    top:10px;
+    width:200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : 2em;
+    margin-bottom : 2em;
+    overflow: hidden;
+    direction: ltl;
+    border-radius: 30px;
+}
+
+#player audio {
+    position : relative;
+    top : 3px;
+}
+
+.question {
+    display : block;
+    padding-top: 1.5em;
+}
+
+.dim-separator {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    font-size : 1.3em;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+
+.form-dim-title{
+    font-size : 1.2em;
+    font-weight: bold;
+    margin-bottom:0;
+}
+
+#comments_label{
+    margin-bottom:0em;
+}
+
+.dim-separator:before, .dim-separator:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+  
+.dim-separator:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+  
+.dim-separator:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+.blank-separator {
+    font-size : 0;
+}
+
+
+.arrow {
+    margin: 1em;
+    padding-bottom: 1.1em;
+  }
+  
+.arrow::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: .5em solid transparent;
+    border-left-color: gray;
+    transform-origin: 0 50%;
+    transition: transform .25s;
+  }
+  
+.arrow.down::before {
+    transform: rotate(90deg);
+    transition: transform .25s;
+  }
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
