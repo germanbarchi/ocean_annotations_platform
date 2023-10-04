@@ -6,6 +6,8 @@ from django.urls import reverse
 from django.views.generic import UpdateView
 from pair_comparison.form import AnnotationForm
 from pair_comparison.models import Annotation, Audio
+from IPython import embed
+import datetime
 
 class AnnotationView(LoginRequiredMixin, UpdateView):
     login_url = 'login'
@@ -25,6 +27,7 @@ class AnnotationView(LoginRequiredMixin, UpdateView):
             return anns.filter(submit=False).order_by('order').first()
 
     def get_context_data(self, **kwargs):
+        print(kwargs)
         context = super(AnnotationView, self).get_context_data(**kwargs)
         context['audio_A'] = self.object.audio_A.audiofile.url
         context['audio_B'] = self.object.audio_B.audiofile.url
@@ -32,6 +35,8 @@ class AnnotationView(LoginRequiredMixin, UpdateView):
         status = [str(a.submit) for a in Annotation.objects.order_by('order').all()]
         context['status'] = ','.join(status)
         context['total'] = Annotation.objects.filter(user=self.request.user).count()
+        #context['mod_time']=datetime.datetime.now()
+        print(context)
         return context
 
     def get(self, request, *args, **kwargs):
@@ -42,9 +47,10 @@ class AnnotationView(LoginRequiredMixin, UpdateView):
             return HttpResponseRedirect(reverse('pair_comparison:end'))
 
     def form_invalid(self, form):
-        return super(AnnotationView, self).form_invalid(form)
+        return super(AnnotationView, self).form_invalid(form)  
 
     def form_valid(self, form):
+        print('valid')
         self.object.submit = True
         return super(AnnotationView, self).form_valid(form)
     

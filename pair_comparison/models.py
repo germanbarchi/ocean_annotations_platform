@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from django import forms
 
-CHOICES = [('Izquierda', 'Izquierda'), ('Derecha', 'Derecha')]
+CHOICES = [('A', 'A'), ('B', 'B')]
 
 class Audio(models.Model):
     audiofile = models.FileField(upload_to='audios/')

@@ -10,11 +10,22 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': 'mbmeza',
-        'PASSWORD': 'teaming2021',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ocean_test_liaa',
+        'USER': 'gbarchi',
+        'PASSWORD': 'g.barchi',
         'HOST': 'localhost',
-        'PORT': '',                                                                                                                                       
+        'PORT': '',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#        'USER': 'mbmeza',
+#        'PASSWORD': 'teaming2021',
+#        'HOST': 'localhost',
+#        'PORT': '',                                                                                                                                       
+#    }
+#}

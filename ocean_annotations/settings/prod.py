@@ -15,14 +15,13 @@ DBBACKUP_STORAGE_OPTIONS = {'location': 'backups/'}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ocean_annotations',
-        'USER': 'mbmeza',
-        'PASSWORD': 'teaming2021',
+        'NAME': 'ocean_liaa',
+        'USER': 'gbarchi',
+        'PASSWORD': 'g.barchi',
         'HOST': 'localhost',
         'PORT': '',
     }
 }
-
 
 STATIC_URL = "/pair_comparison/static/"
 SITE_ROOT = '/home/gbarchi/pair_comparison/ocean_annotations/'

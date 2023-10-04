@@ -4,7 +4,11 @@ from django.views.generic import TemplateView
 from pair_comparison.views import AnnotationView, end
 from . import views
 
+from django.contrib import admin
+from django.urls import path
+
 urlpatterns = [
+    path("admin/", admin.site.urls),
     path(r'instructions',
          login_required(TemplateView.as_view(template_name='pair_comparison/instructions.html'), login_url='/'),
          name='instructions'),

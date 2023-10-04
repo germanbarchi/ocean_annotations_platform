@@ -1,12 +1,11 @@
 from django import forms
-from pair_comparison.models import Annotation
+from pair_comparison.models import Annotation, CHOICES
 
 DIMENSIONS = {'dim_O': 'Apretura a la experiencia', 
               'dim_C': 'Responsabilidad', 
               'dim_E': 'Extraversion', 
               'dim_A': 'Amabilidad',
               'dim_N': 'Neuroticismo'}
-CHOICES = [('A', 'A'), ('B', 'B')]
 
 HELPS = {'dim_O' : 'Dim O help',
          'dim_C' : 'Dim C help',
@@ -24,7 +23,7 @@ class AnnotationForm(forms.ModelForm):
     
     class Meta:
         model = Annotation
-        exclude = ('submit', 'audio_A', 'audio_B',  'order', 'user','last_modified')
+        exclude = ('submit', 'audio_A', 'audio_B',  'order', 'user','mod_time')
 
     def __init__(self, *args, **kwargs):
         super(AnnotationForm, self).__init__(*args, **kwargs)
