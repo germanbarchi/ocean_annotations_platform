@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 import os
-
+import joblib
 
 class Command(BaseCommand):
     help = ''
@@ -27,9 +27,10 @@ class Command(BaseCommand):
         else:
             pairs = []
             audios = list(Audio.objects.all())
+            
             for i in range(len(audios)-1):
                 for j in range(i+1, len(audios)):
-                    pair_id = f"{audios[i].name.split('_')[1]}_{audios[j].name.split('_')[1]}"
+                    pair_id = f"{audios[i].name.split('_')[3]}_{audios[j].name.split('_')[3]}"
                     pairs.append({'user' : None, 
                                     'audio_A' : audios[i],
                                     'audio_B' : audios[j], 
@@ -59,3 +60,4 @@ class Command(BaseCommand):
                 data.loc[this_pair.name, 'user'] = user
                 data.loc[this_pair.name, 'order'] = order      
         data.to_pickle(data_path)
+        joblib.dump(data,'/home/ubuntu/ocean_annotations_platform/pair_comparison/management/commands/data_joblib.pkl')

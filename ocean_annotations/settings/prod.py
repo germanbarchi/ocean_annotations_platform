@@ -2,7 +2,7 @@ from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['fabula.exp.dc.uba.ar', 'localhost']
+ALLOWED_HOSTS = ['ec2-3-145-0-236.us-east-2.compute.amazonaws.com','fabula.exp.dc.uba.ar', 'localhost', '127.0.0.1']
 
 
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
@@ -15,7 +15,7 @@ DBBACKUP_STORAGE_OPTIONS = {'location': 'backups/'}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ocean_liaa',
+        'NAME': 'ocean_app',
         'USER': 'gbarchi',
         'PASSWORD': 'g.barchi',
         'HOST': 'localhost',
@@ -23,8 +23,8 @@ DATABASES = {
     }
 }
 
-STATIC_URL = "/pair_comparison/static/"
-SITE_ROOT = '/home/gbarchi/pair_comparison/ocean_annotations/'
+STATIC_URL = '/pair_comparison/static/'
+SITE_ROOT = '/home/ubuntu/ocean_annotations_platform'
 STATICFILES_DIRS = (
     os.path.join(SITE_ROOT, 'ocean_annotations/static/'),
 )

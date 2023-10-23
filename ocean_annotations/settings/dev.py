@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ec2-3-145-0-236.us-east-2.compute.amazonaws.com','localhost', '127.0.0.1']
 
 
 # Database
