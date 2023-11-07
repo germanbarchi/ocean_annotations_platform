@@ -28,9 +28,12 @@ class Command(BaseCommand):
             pairs = []
             audios = list(Audio.objects.all())
             
+            #from IPython import embed; embed()
+
             for i in range(len(audios)-1):
                 for j in range(i+1, len(audios)):
                     pair_id = f"{audios[i].name.split('_')[3]}_{audios[j].name.split('_')[3]}"
+                    print(pair_id)
                     pairs.append({'user' : None, 
                                     'audio_A' : audios[i],
                                     'audio_B' : audios[j], 

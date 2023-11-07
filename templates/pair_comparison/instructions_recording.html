@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load forms_tags %}
+{% block extratitle %}Instrucciones{% endblock extratitle %}
+{% block content %}
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <h2 class="nav-title">Instrucciones / definiciones / Anotacion de personalidad</h2>
+        <ul class="navbar-nav ml-auto">
+            <button id="logout" class="btn btn-danger btn-md" type="button" 
+                    onclick=location.href="{% url 'logout' %}">Cerrar Sesión
+            </button>
+        </ul>
+    </nav>
+    <br> 
+
+    <div id="instructions">
+            <!--https://core.ac.uk/download/pdf/61459114.pdf-->
+            
+            <h2> Instrucciones para la grabación </h2>
+            <p>
+                <br>
+                Para poder participar de las anotaciones, te pedimos lo siguiente:
+                <br>
+                <br>
+                1- Utilizá auriculares que funcionen correctamente. 
+                <br> 
+                2- Realizá el test en un ambiente silencioso y sin distracciones.
+                <br>
+                3- Desconectá o silenciá dispositivos que puedan desconcentrarte durante la prueba.
+                <br> 
+                4- Ajustá el volumen de tu dispositivo, utilizando el siguiente audio de referencia. Al hacerlo, buscá un nivel de escucha que te resulte cómodo, 
+                ya que este no debe ser modificado durante la prueba. 
+               <br>
+                                
+                <div id="player">
+                    <audio id="bgAudio" controls controlslist="nodownload" preload="auto">
+                        <source src="{% static 'audio/referencia.wav' %}"/>
+                        Este browser no es capaz de reproducir el audio de prueba
+                    </audio>
+                    <script>
+                        var audio = document.getElementById("bgAudio");
+                        audio.volume = 1.0;
+                    </script>
+                </div>
+                
+            </p>
+            <!--
+            <div id="teaming_scheme" class="img-fluid text-center">
+                <figure>
+                    <img src="{% static 'image/gamesuba-examples.gif' %}"/>
+                </figure>
+            </div>
+            -->
+
+    </div>
+    
+    <br>
+    <div class="form-group text-center">
+        <input type="button" name="submit" class="btn btn-primary btn-lg" onclick=location.href="{% url 'pair_comparison:form' %}" value="Comenzar">
+    </div>
+
+{% endblock content %}

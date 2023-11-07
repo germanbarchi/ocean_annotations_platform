@@ -55,8 +55,11 @@ class AnnotationView(LoginRequiredMixin, UpdateView):
         return super(AnnotationView, self).form_valid(form)
     
     
-    
+def audio_check(request):
+    # Your view logic here
+    return render(request, 'pair_comparison/instructions_recording.html', {})
     
 def end(request):
     logout(request)
     return render(request, 'pair_comparison/end.html', {})
+

@@ -19,6 +19,7 @@ from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include 
 from django.contrib import admin
+from pair_comparison.views import AnnotationView, end, audio_check
 
 
 urlpatterns = [

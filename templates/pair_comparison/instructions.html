@@ -5,7 +5,7 @@
 {% block content %}
 
     <nav class="navbar navbar-expand-lg navbar-light">
-        <h2 class="nav-title">Instrucciones / definiciones / Anotacion de personalidad</h2>
+        <h2 class="nav-title">Instrucciones / definiciones / Anotación de personalidad</h2>
         <ul class="navbar-nav ml-auto">
             <button id="logout" class="btn btn-danger btn-md" type="button" 
                     onclick=location.href="{% url 'logout' %}">Cerrar Sesión
@@ -16,16 +16,23 @@
 
     <div id="instructions">
             <!--https://core.ac.uk/download/pdf/61459114.pdf-->
-            <h2> Definiciones </h2>
+            <h2> Test subjetivo de Personalidad</h2>
+            <br>
             <p> 
-                La personalidad se define como “diferencias individuales en patrones característicos de pensamiento, comportamiento y sentimiento” 
-                (American Psychological Association). En la historia de la psicología, se ha intentado identificar, describir y clasificar dichos patrones,
+                La <b>personalidad</b> se define como “diferencias individuales en patrones característicos de pensamiento, comportamiento y sentimiento” 
+                (American Psychological Association). En la historia de la psicología, se ha intentado identificar y clasificar dichos patrones,
                 de tal manera de poder describir sistemáticamente la personalidad de un individuo. En particular, en los últimos años, en el campo de la psicología
                 computacional, se ha adoptado el modelo de los Cinco Factores (MCF) o de los Cinco Grandes, el cual clasifica la personalidad en cinco dimensiones, 
                 teóricamente independientes. Estas son: Neuroticismo, Extraversión, Apertura a la Experiencia, Amabilidad y Conciencia.
 </b>
             </p>
-            <br>
+            <h2> Instrucciones </h2>
+            <p>
+                En esta tarea, se te presentarán pares de audios, en los que distintas personas contarán una historia breve o hablarán sobre su sandwich favorito. Tu objetivo es evaluar y determinar cuál de las personas, en cada par de audios, presenta de manera más marcada o saliente cada una de las dimensiones de los "cinco grandes". A continuación, te proporcionamos las definiciones que deberás usar para realizar la tarea.
+                <br>
+            </p>
+
+            <h2> Definiciones </h2>
                 <b>Apertura a la experiencia:</b> Este factor se refiere a la disposición de una persona para experimentar nuevas ideas, emociones y actividades.
                  Las personas con alta apertura a la experiencia suelen ser curiosas, imaginativas y abiertas al cambio.
             
@@ -40,18 +47,12 @@
                 con los demás. Las personas altas en amabilidad suelen ser cálidas, empáticas, amigables, altruistas y afectivas.
 
             <br><br>
-                <b>Neuroticismo:</b> Este factor se relaciona con la estabilidad emocional y la tendencia a experimentar emociones negativas como la ansiedad, la depresión 
+                <b>Neuroticismo:</b> Este factor se relaciona con la inestabilidad emocional y la tendencia a experimentar emociones negativas como la ansiedad, la depresión 
                 y el estrés. Las personas con alto neuroticismo pueden ser propensas a la preocupación y la inestabilidad emocional.
 
             <br><br>
             
-            <h2> Instrucciones </h2>
-            <p>
-                A continuación, escucharás pares de audios, donde distintas personas se encontrarán leyendo una historia breve, o contando cuál es su sándwich favorito. Para cada 
-                par que se presente, tendrás que escuchar atentamente cada uno de los audios, y elegir cuál de ellos presenta un rasgo de personalidad mayor al otro. Deberás hacer esto
-                para cada uno de los cinco factores de personalidad, pudiendo escuchar los audios las veces que consideres necesarias. Además, recordá que podés acceder a la definición de cada factor de personalidad a través del símbolo de ayuda.<br>
-                <br> Comenzamos!
-            </p>
+            
             <!--
             <div id="teaming_scheme" class="img-fluid text-center">
                 <figure>
@@ -64,7 +65,7 @@
     
     <br>
     <div class="form-group text-center">
-        <input type="button" name="submit" class="btn btn-primary btn-lg" onclick=location.href="{% url 'pair_comparison:form' %}" value="Continuar">
+        <a href="instructions_recording" class="btn btn-primary">Siguiente</a>
     </div>
 
 {% endblock content %}
