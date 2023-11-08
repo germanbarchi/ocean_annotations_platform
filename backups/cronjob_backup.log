@@ -1,1 +1,27 @@
 /home/ubuntu/ocean_annotations_platform/backups/push_backup.sh: line 4: python: command not found
+[main 7ab9ab8] update_backup
+ Committer: Ubuntu <ubuntu@ip-172-31-33-154.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 18 files changed, 108 insertions(+), 46 deletions(-)
+ create mode 100644 backups/cronjob_backup.log
+ create mode 100644 backups/data.json
+ create mode 100644 backups/data_marcos.pkl
+ create mode 100644 data_dump.json
+ delete mode 100644 explore_database.ipynb
+ rewrite pair_comparison/management/commands/data_joblib.pkl (96%)
+ create mode 100644 templates/pair_comparison/instructions_recording.html
+ rename templates/{ => pair_comparison}/test.html (69%)
+To github.com:germanbarchi/ocean_annotations_platform.git
+   a4b4b67..7ab9ab8  main -> main
+/home/ubuntu/ocean_annotations_platform/backups/push_backup.sh: line 4: python: command not found
