@@ -5,7 +5,7 @@
 {% block content %}
 
     <nav class="navbar navbar-expand-lg navbar-light">
-        <h2 class="nav-title">Instrucciones / definiciones / Anotación de personalidad</h2>
+        <h2 class="nav-title">Definiciones de personalidad</h2>
         <ul class="navbar-nav ml-auto">
             <button id="logout" class="btn btn-danger btn-md" type="button" 
                     onclick=location.href="{% url 'logout' %}">Cerrar Sesión
@@ -20,7 +20,7 @@
             <br>
             <p> 
                 La <b>personalidad</b> se define como “diferencias individuales en patrones característicos de pensamiento, comportamiento y sentimiento” 
-                (American Psychological Association). En la historia de la psicología, se ha intentado identificar y clasificar dichos patrones,
+                (American Psychological Association). En la historia de la psicología se ha intentado identificar y clasificar dichos patrones,
                 de tal manera de poder describir sistemáticamente la personalidad de un individuo. En particular, en los últimos años, en el campo de la psicología
                 computacional, se ha adoptado el modelo de los Cinco Factores (MCF) o de los Cinco Grandes, el cual clasifica la personalidad en cinco dimensiones, 
                 teóricamente independientes. Estas son: Neuroticismo, Extraversión, Apertura a la Experiencia, Amabilidad y Conciencia.
@@ -28,7 +28,7 @@
             </p>
             <h2> Instrucciones </h2>
             <p>
-                En esta tarea, se te presentarán pares de audios, en los que distintas personas contarán una historia breve o hablarán sobre su sandwich favorito. Tu objetivo es evaluar y determinar cuál de las personas, en cada par de audios, presenta de manera más marcada o saliente cada una de las dimensiones de los "cinco grandes". A continuación, te proporcionamos las definiciones que deberás usar para realizar la tarea.
+                Se te presentarán pares de audios en los que distintas personas contarán una historia breve o hablarán sobre su sandwich favorito. Tu objetivo es evaluar y determinar cuál de las personas, en cada par de audios, presenta de manera más marcada o saliente cada una de las dimensiones de los "cinco grandes". A continuación, te proporcionamos las definiciones que deberás usar para realizar la tarea.
                 <br>
             </p>
 
@@ -43,7 +43,7 @@
                 <b>Extroversión:</b> Este factor se refiere al grado en que una persona busca la compañía de otros, disfruta de situaciones sociales y tiende a ser 
                 locuaz y enérgica . Las personas con alta extroversión suelen ser sociables, asertivas, independientes y comunicativas.
             <br><br>
-                <b>Amabilidad:</b> También conocido como "afabilidad", este factor se refiere a la disposición de una persona para ser considerada, compasiva y cooperativa 
+                <b>Amabilidad:</b> Este factor, también conocido como "afabilidad", se refiere a la disposición de una persona para ser considerada, compasiva y cooperativa 
                 con los demás. Las personas altas en amabilidad suelen ser cálidas, empáticas, amigables, altruistas y afectivas.
 
             <br><br>
@@ -64,8 +64,9 @@
     </div>
     
     <br>
+
     <div class="form-group text-center">
-        <a href="instructions_recording" class="btn btn-primary">Siguiente</a>
+        <input type="button" name="submit" class="btn btn-primary btn-lg" onclick=location.href="{% url 'pair_comparison:form' %}" value="Comenzar">
     </div>
 
 {% endblock content %}

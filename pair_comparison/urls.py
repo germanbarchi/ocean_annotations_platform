@@ -17,3 +17,14 @@ urlpatterns = [
     path(r'form/<int:order>', AnnotationView.as_view(), name='form'),
     path(r'end', end, name='end'),
 ]
+
+#urlpatterns = [
+#    path("admin/", admin.site.urls),
+#    path(r'instructions_recording',
+#         login_required(TemplateView.as_view(template_name='pair_comparison/instructions_recording.html'), login_url='/'),
+#         name='instructions_recording'),
+#    path(r'instructions_recording', audio_check, name='instructions_recording'),
+#    path(r'form', AnnotationView.as_view(), name='form'),
+#    path(r'form/<int:order>', AnnotationView.as_view(), name='form'),
+#    path(r'end', end, name='end'),
+#]

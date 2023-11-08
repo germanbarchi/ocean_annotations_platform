@@ -5,7 +5,7 @@
 {% block content %}
 
     <nav class="navbar navbar-expand-lg navbar-light">
-        <h2 class="nav-title">Instrucciones / definiciones / Anotacion de personalidad</h2>
+        <h2 class="nav-title">Condiciones</h2>
         <ul class="navbar-nav ml-auto">
             <button id="logout" class="btn btn-danger btn-md" type="button" 
                     onclick=location.href="{% url 'logout' %}">Cerrar Sesión
@@ -17,19 +17,19 @@
     <div id="instructions">
             <!--https://core.ac.uk/download/pdf/61459114.pdf-->
             
-            <h2> Instrucciones para la grabación </h2>
+            <h2> Instrucciones antes de empezar </h2>
             <p>
                 <br>
-                Para poder participar de las anotaciones, te pedimos lo siguiente:
+                Es obligatorio que cumplas lo siguiente para poder participar de las anotaciones:
                 <br>
                 <br>
-                1- Utilizá auriculares que funcionen correctamente. 
+                1- <b>Debés utilizar auriculares. Es importante que funcionen correctamente.</b> 
                 <br> 
-                2- Realizá el test en un ambiente silencioso y sin distracciones.
+                2- Debés estar en un ambiente silencioso y sin distracciones, durante todo el tiempo que participes de las anotaciones.
                 <br>
-                3- Desconectá o silenciá dispositivos que puedan desconcentrarte durante la prueba.
+                3- Desconectá o silenciá dispositivos que puedan desconcentrarte durante las anotaciones.
                 <br> 
-                4- Ajustá el volumen de tu dispositivo, utilizando el siguiente audio de referencia. Al hacerlo, buscá un nivel de escucha que te resulte cómodo, 
+                4- Ajustá el volumen de tu dispositivo, utilizando el siguiente audio de referencia. Para ello, buscá un nivel de escucha que te resulte cómodo. <b>Este no debe ser modificado durante todo el proceso de anotaciones</b> 
                 ya que este no debe ser modificado durante la prueba. 
                <br>
                                 
@@ -57,7 +57,8 @@
     
     <br>
     <div class="form-group text-center">
-        <input type="button" name="submit" class="btn btn-primary btn-lg" onclick=location.href="{% url 'pair_comparison:form' %}" value="Comenzar">
+        <a href="instructions" class="btn btn-primary">Siguiente</a>
     </div>
+
 
 {% endblock content %}

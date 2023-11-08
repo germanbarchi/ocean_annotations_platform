@@ -24,10 +24,12 @@ from pair_comparison.views import AnnotationView, end, audio_check
 
 urlpatterns = [
     path('pair_comparison/admin/', admin.site.urls),
+    #path(r'pair_comparison/', LoginView.as_view(next_page=r'pair_comparison/ann/instructions_recordings'), name='login'),
     path(r'pair_comparison/', LoginView.as_view(next_page=r'pair_comparison/ann/instructions'), name='login'),
     path(r'pair_comparison/ann/logout', LogoutView.as_view(next_page=r'/pair_comparison/'), name="logout"),
     path(r'pair_comparison/ann/', include(('pair_comparison.urls', 'pair_comparison'), namespace='pair_comparison')),
 ]
+
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
