@@ -4,3 +4,12 @@ User 3: Gustavo Juantorena
 User 4: Francisco Valentini
 User 5: Gonzalo Pérez
 User 6: Manuela Cerdeiro
+User 7: Camila Santana
+User 8: Sabrina Liotti
+User 9: María Pía Toto
+User 10: Federico Cappella
+User 11: Victoria Ferrari
+User 12: Sofía Guadalupe
+User 13: Juan Martín Begalli
+User 14: María Taffernaberry
+User 15: Leonardo Pepino
