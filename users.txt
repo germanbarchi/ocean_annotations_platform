@@ -13,3 +13,8 @@ User 12: Sofía Guadalupe
 User 13: Juan Martín Begalli
 User 14: María Taffernaberry
 User 15: Leonardo Pepino
+User 16: Felipe Saidón
+User 17: Alan Ferrise
+User 18: Victoria Klimkowski
+User 19: Pablo Dallegri
+User 20: María Prieto

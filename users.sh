@@ -21,4 +21,9 @@ python manage.py create_users -user user12 -pass user.12
 python manage.py create_users -user user13 -pass user.13
 python manage.py create_users -user user14 -pass user.14
 python manage.py create_users -user user15 -pass user.15
-
+python manage.py create_users -user user16 -pass user.16
+python manage.py create_users -user user17 -pass user.17
+python manage.py create_users -user user18 -pass user.18
+python manage.py create_users -user user19 -pass user.19
+python manage.py create_users -user user20 -pass user.20
+python manage.py create_users -user user21 -pass user.21
