@@ -18,3 +18,18 @@ User 17: Alan Ferrise
 User 18: Victoria Klimkowski
 User 19: Pablo Dallegri
 User 20: María Prieto
+User 21: -
+User 22: Milagros Taffernaberry
+User 23: Paula Sar
+User 24: Veronica Morinigo
+User 25: Martin Hoyos
+User 26: Micaela Bolzani
+User 27: Marcelo Orellana
+User 28: Pamela Lazarte
+User 29: Catalina Gauder 
+User 30: Ursula Bonatti
+User 31: Rocío Cespedes
+User 32: Micaela Escobar
+User 33: Soledad Perez de San Román
+User 34: Patricia Castellano
+User 35: Eugenia Morales

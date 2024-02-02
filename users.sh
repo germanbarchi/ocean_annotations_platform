@@ -27,3 +27,18 @@ python manage.py create_users -user user18 -pass user.18
 python manage.py create_users -user user19 -pass user.19
 python manage.py create_users -user user20 -pass user.20
 python manage.py create_users -user user21 -pass user.21
+
+python manage.py create_users -user user22 -pass user.22
+python manage.py create_users -user user23 -pass user.23
+python manage.py create_users -user user24 -pass user.24
+python manage.py create_users -user user25 -pass user.25
+python manage.py create_users -user user26 -pass user.26
+python manage.py create_users -user user27 -pass user.27
+python manage.py create_users -user user28 -pass user.28
+python manage.py create_users -user user29 -pass user.29
+python manage.py create_users -user user30 -pass user.30
+python manage.py create_users -user user31 -pass user.31
+python manage.py create_users -user user32 -pass user.32
+python manage.py create_users -user user33 -pass user.33
+python manage.py create_users -user user34 -pass user.34
+python manage.py create_users -user user35 -pass user.35
