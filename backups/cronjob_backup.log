@@ -4557,3 +4557,21 @@ After doing this, you may fix the identity used for this commit with:
 To github.com:germanbarchi/ocean_annotations_platform.git
    288ce7c..2f98dfa  main -> main
 /home/ubuntu/ocean_annotations_platform/backups/push_backup.sh: line 4: python: command not found
+[main dc9b872] update_backup
+ Committer: Ubuntu <ubuntu@ip-172-31-33-154.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To github.com:germanbarchi/ocean_annotations_platform.git
+   2f98dfa..dc9b872  main -> main
+/home/ubuntu/ocean_annotations_platform/backups/push_backup.sh: line 4: python: command not found
